@@ -6,27 +6,27 @@ use serde::Serialize;
 
 #[derive(Debug, Clone, Serialize)]
 struct VASPData {
-	vasp_name: String,
-	vasp_address_hash: String,
-	chain_id: u32,
+    vasp_name: String,
+    vasp_address_hash: String,
+    chain_id: u32,
 }
 
 impl VASPData {
-	pub fn new(name: &str, address: &str, chain_id: u32) -> VASPData {
-		VASPData {
-			vasp_name: name.to_string(),
-			vasp_address_hash: address.to_string(),
-			chain_id: chain_id,
-		}
-	}
+    pub fn new(name: &str, address: &str, chain_id: u32) -> VASPData {
+        VASPData {
+            vasp_name: name.to_string(),
+            vasp_address_hash: address.to_string(),
+            chain_id: chain_id,
+        }
+    }
 }
 
 fn main() {
-	let vasp = VASPData::new("Binance", "1EEq3UrinJ4hkZ42chcgJzMKrexbef8Xw2", 0);
+    let vasp = VASPData::new("Binance", "1EEq3UrinJ4hkZ42chcgJzMKrexbef8Xw2", 0);
 
-	println!("Vasp is: {:?}", vasp);
-	let serialized_vasp = serialize(&vasp).unwrap();
-	println!("Serizlied VASP is: {:?}", serialized_vasp);
+    println!("Vasp is: {:?}", vasp);
+    let serialized_vasp = serialize(&vasp).unwrap();
+    println!("Serizlied VASP is: {:?}", serialized_vasp);
 
     let mut real_transcript = Transcript::new(b"test msg");
     let mut test_transcript = Transcript::new(b"test msg");
