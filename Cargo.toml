@@ -1,0 +1,13 @@
+[package]
+name = "zk_trisa"
+version = "0.1.0"
+authors = ["jaketarnow <jacobtarnow@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+curve25519-dalek 	= "1.2.3"
+merlin 				= "^1.0.3"
+bulletproofs 		= "^1.0.4"
+rand 				= "^0.7.2"
+bincode 			= "1.1.4"
+serde 				= { version = "1.0.97", features = ["derive", "rc"] }
